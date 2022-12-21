@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola que hace</h1>
+
+    <form method="get">
+        Nombre: <input type="text" name="nombre"><br>
+        Email: <input type="text" name="email"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    Hola 
+    <?php isset($_REQUEST["nombre"]) ? print $_REQUEST["nombre"] : ""; ?>
+    <br>
+    Tu email es: 
+    <?php isset($_GET["email"]) ? print $_GET["email"] : ""; ?>
+</body>
+</html>

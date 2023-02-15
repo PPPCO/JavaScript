@@ -17,7 +17,8 @@ console.log(persona);
 
 
 
-/** Agregar METODOS A NUESTRO OBJETO
+/** 
+ * Agregar METODOS A NUESTRO OBJETO
  * 
  */
 
@@ -26,14 +27,19 @@ let persona2 = {
     apellido:'Garcia',
     emai:'paco@gmail.com',
     edad: 24,
-    nombreCompleto: function(){
+    nombreCompleto: function(){// estamos declarando la funcion como si fuera de tipo expresion
         return this.nombre + ' ' + this.apellido;// para acceder a una propiedad desde una funcion que forma parte del objetom, tanto la propiedad
         // como la funcion tenemos que hacer uso de la palabra THIS
+    },
+    nombreCompleto2: function(){
+        return `El nombre completo es ${this.nombre} ${this.apellido}`
     },
 
 }
 
 console.log(persona2.nombreCompleto());
+// El uso de los parentesis en el llamado de la funcion es esencial
+console.log(persona2.nombreCompleto2());
 
 
 

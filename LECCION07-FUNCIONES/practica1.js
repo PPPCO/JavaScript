@@ -93,3 +93,4 @@ console.log(sumatoria);
 
 let sumaFlecha = (a,b) => a + b;
 console.log(sumaFlecha(1,2));
+

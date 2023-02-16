@@ -118,7 +118,11 @@ let FinalPruebas={
     saludar: function(){
         this.get_date();
         console.log(`Hola hoy es: ${this.date}`);
+    },
+    get unHola(){
+        console.log('Hola que hace');
     }
 }
+FinalPruebas.unHola;
 // FinalPruebas.gate_date();
 FinalPruebas.saludar();

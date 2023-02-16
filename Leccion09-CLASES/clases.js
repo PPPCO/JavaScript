@@ -171,3 +171,42 @@ console.log(Persona.email);
 
 // ----------------------------PALABRA STATIC-------------------
 /** Un metodo estatico se asocia con una clase pero no con los objetos, osea que los objetos que sean creados usando una clase con metodos estaticos no podran hacer uso de estos metodos ya que estos solo son para la clase */
+
+
+
+class Operaciones{
+    constructor(numero1, numero2, numero3){
+        this._numero1 = numero1;
+        this._numero2 = numero2;
+        this._numero3 = numero3;
+    }
+    get suma(){
+        return this._numero1 + this._numero2 + this._numero3;
+    }
+//         Tenemos que declarar una funcion que no sea get o set de la siguiente manera.
+    multiplicar(){
+        return this._numero1 * this._numero2 * this._numero3;
+    }
+}
+
+let op1 = new Operaciones(1,2,3);
+console.log(op1.suma);
+console.log(op1.multiplicar());
+
+
+class MasOp extends Operaciones{
+    constructor(numero1, numero2, numero3, numero4){
+        super(numero1,numero2,numero3);
+        this._numero4 = numero4;
+    }
+    get numeros(){
+        return super.suma + this._numero4;
+    }
+
+}
+let op2 =  new MasOp(4,5,6,7);
+console.log(op2.numeros);
+console.log(op2.multiplicar());
+
+/** tambien tenemos lo de atributos y metodos estaticos pero si si me quedo claro. */
+

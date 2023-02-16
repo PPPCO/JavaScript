@@ -216,6 +216,8 @@ let personita1 = {
     },
     function2: function(){
         return this.nombre + ' ' + this.apellido;
+    },
+    get hola(){
     }
 }
 
@@ -251,3 +253,41 @@ console.log(personita1.nombreCompleto.apply(personita2,['Docente', 121231]));
 
 // NOTA* 
 // lO que estamos haciendo cuando usamos call o apply es que no estamos usando una funcion que esta en un objeto en otro objeto, osea esta no es como que se traslade, lo que realmente esta pasando es que estamos usando la funcion en el objeto en que fue definida, PERO con los datos de otro objeto, eso es lo que realmente pasa.
+
+
+
+function Policia(nombre, apellido, edad, estatura){
+    this.nombre =  nombre;
+    this.apellido =  apellido;
+    this.edad =  edad;
+    this.estatura =  estatura;
+
+    this.datos =  function(){
+        return `${this.nombre} ${this.apellido}, su edad es ${this.edad}, estatura ${this.estatura}`;
+    };
+    // La siguiente forma no es la adecuada de crear una  funcion, debemos de crear funciones referenciadas o ANONIMAS
+    function saludarA(){
+        return `Hola como estas ${this.nombre}`;
+    };
+
+    // creo tambien no podeos usar funcion es get cuando creeamos metodos constructores.
+    this.hola =  function (){
+        console.log('Hola que hace desde un metodo constructor deobjetos');
+    };
+    this.adios  =function(){
+        console.log('adios');
+        return 'Adios'
+    };
+}
+
+let policia1 = new Policia('Juan', 'Gonzales', 23, '75 cm');
+console.log(policia1.datos());
+policia1.hola();
+policia1.hola;
+console.log(policia1.adios());
+
+// No eh descubierto como usar funciones get y set en un metodo constructor de objetos
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del dom con HTML</title>
+    <link type= "favicon/x-icon" rel="icon" href="nubesita.png">
+    <style>
+        .azul{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="cabecero" class="azul">Ejemplo DOM con JS</h1>
+    <p id="parrafo1" class="azul">Saludos!</p>
+    <p id="parrafo2" class="azul">Otro parrafo</p>
+
+
+
+
+    <script>
+        // recordemos que DOM significa Document Object Model, document hace referencia al documento donde esta alojado el codfigo html y que quere usar junto a js, por lo tanto cuando queremos acceder a algun elemento html desde js tenemos que iniciar con 'document', despues ya podremos seleccionar el elemento con ayuda de las funcione s que nos permite usar. 
+        let cabecero = document.getElementById("cabecero");//nos regresara un objeto, de hecho todos los elementos html nos los traera como objetos, por lo tanto estos tienen atributos y metodos. Para acceder al valor del elemento html que estamos mandando a traer tnemos que hacer uso de la funcion 'innerHTML'.
+        let parrafo = document.getElementById('parrafo1');
+        // si no colocamos 'innerHTML', lo que nos traera document.getElementById(), sera toda la linea html, desde la etiqueta de apertura hasta la de cierre, es de destacar que nos traera eso en un objeto y para acceder al valor o texto es que usamos 'innerHTML'
+        
+        console.log(cabecero.innerHTML);
+        console.log(parrafo.innerHTML);
+        // innerHTML no solo nos permitira visualizar el contenido sino tambien modificarlo
+        /** IMPORTANTE, para poder modificar el contenido de un elemento html tenemos que haberlo seleccionado solamente haciendo uso de document.getElementById('id'), sin agregarle innerHTML ahi mismo porque lo que sucedera es que despues no podremos modificar el contenido entonces si traermos el contenido del elemento html este se nos taera como un objeto y si queremos imprimir su contenido tendremos que usar un clg del la variable que contiene el elemento y seleccionar su atributo innerHTML para acceder unicamente a la informacion que contiene  */
+        parrafo.innerHTML = 'Nuevo valor del parrafo';
+        cabecero.innerHTML = 'Cambio de cabecero';
+        console.log(parrafo.innerHTML);
+        console.log('Saludos desde Java script');
+
+
+
+        // seleccionado por TIPO DE ELEMENTO HTML
+        let parrafors = document.getElementsByTagName('p');
+        console.log(`Numero de parrafos ${parrafors.length}`);
+        for(let i =0 ; i < parrafors.length ; i++){
+            console.log(` ${i} - ` + parrafors[i].innerHTML);
+        }
+
+
+        //seeleccionando elementos por la CLASE
+
+        let parrafosclas = document.getElementsByClassName('azul');
+        console.log(`Numero de elementos, seleccionados por clase ${parrafosclas.length}`);
+        for(let i =0 ; i < parrafosclas.length ; i++){
+            console.log(` ${i} - ` + parrafosclas[i].innerHTML);
+        }
+
+        for(let elemento of parrafosclas){
+            console.log(elemento.innerHTML);
+        }
+        
+    </script>
+</body>
+</html>

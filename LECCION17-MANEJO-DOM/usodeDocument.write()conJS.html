@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM con Java Scipt</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body>
+    <h1>Manejo DOM con Java Script</h1>
+    <button onclick="demostrar()">Demostrar</button>
+    <br>
+    <script>
+        // Esto nos servira para cuando queremos escribir informacion directamente en nuestro documento HTML
+
+        document.write('Saludos desde JavaScript');// nos estamos haciendo uso de ningun elemento html, simplemente estamos vaciando informacion directamente desde js a html.
+        // Tenemos que tener cuaidado con el uso de esta funcion porque en caso de tener elementos html cargados y ejecutamos una funcon JS que use document.write sucedera que se sobreescribira la pagina html y unicamente se vizualizara lo que vaciemos haciendo uso de esta funcion.
+        function demostrar(){
+        document.write('Demostrando que al ejecutar una funcion con document.write se pierde el contenido html y solo se vizualizara lo que queramos vaciar haciendo uso de esta funcion js.');
+        }
+    </script>
+</body>
+</html>

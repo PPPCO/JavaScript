@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del evento onmouseout y onmouseover</title>
+</head>
+<body>
+    <h1 id="titulo" onmousedown="rojo(this)" onmouseup="azul(this)" onclick="verde(this)">Manejo del evento onmouseout y onmouseover</h1>
+<!-- onmousedown: cuando damos click en un elemento, onmouseup: cuando soltamos el click
+y onclick pues bueno, se disparara al dar un click completo -->
+    <script>
+        function rojo(elemento){
+            console.log('onmousedown, cambio a rojo');
+            
+            elemento.style.color = 'red';
+        }
+        function azul(elemento){
+            elemento.style.color = 'blue';
+            console.log('onmouseup, cambio a azul');
+
+        }
+        function verde(elemento){
+            elemento.style.color = 'green';
+            console.log('onclick, cambio a verde');
+
+        }
+    </script>
+</body>
+</html>

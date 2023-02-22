@@ -57,6 +57,14 @@
         for(let elemento of parrafosclas){
             console.log(elemento.innerHTML);
         }
+
+        // Metodo querySelectorAll
+
+        let elementos2 = document.querySelectorAll('p.azul, h1');
+        // Este metodo nos permite seleccionar un elemento html especificando la etiqueta, una clase o convinando etiqueta y clase que tiene la etiqueta para seleccionarla, ademas de que podemos pasarle mas de un elemento html, como lo estamos haciendo aqui, que estamos seleccioando una etiqueta de clase azul y un encabezado h1.
+        for(let elemento of elementos2){
+            console.log('Seleccionado elementos con querySelectorAll: '+ elemento.innerHTML);
+        }
         
     </script>
 </body>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Formularios</title>
+    <link rel="icon" type="favicon/x-icon" href="nubesita.png">
+</head>
+<body> 
+    <form id="formulario" action="">
+        Nombre: <input type="text" name="nombre" value="Juan">
+        <br>
+        Apellido: <input type="text" name="apellido" value="Perez">
+        <br>
+    </form>
+    <button onclick="mostrarValores()">Mostrar</button>
+    <div id="valores">
+
+    </div>
+
+    <hr>
+
+    <h1>Sumar</h1>
+    <form action="" id="sumatoria">
+        Nuemro 1: <input type="number" value="0" name="numero1">
+        <br>
+        Nuemro 2: <input type="number" value="0" name="numero2">
+    </form>
+    <button onclick="hacerSuma()">Sumar</button>
+    <div id="resultadoSuma"></div>
+
+
+    <script>
+        function mostrarValores(){
+            let formulario = document.forms['formulario'];
+
+            let texto = '';
+            // for(let elemento of formulario){
+            //     texto += elemento.value + '<br>';
+            // }
+            
+            //  accediendo a los elemtnso de un formulario de manera infividual
+
+            let nombre =  formulario['nombre'];
+            let apellido =  formulario['apellido'];
+                //  tenemos que acceder a los elementos del formulario como si fuese un arreglo porque cuando hacemos uso de 'document.forms' esto nos trarera la informacion del formulario como si fuese un arreglo.
+            
+            texto = nombre.value + ' <br> ' + apellido.value;
+            // tenemos que seguir haciendo uso del .velue, para acceder unicamente al valor, de lo contrario accederemos al contenido de toda la linea de codigo, o bueno nos mostrara todo el objeto porque recordemos que nos lo trae como objeto.Bueno a nos trae un arreglo lleno de objetos y cuando seleccionamos el nombre nos arroja un objeto
+
+            document.getElementById('valores').innerHTML = texto;
+            //En la linea anterior estamos seleccionado el elemento html en el que queremos mostrar el resultado de nuestra funcion o bueno donde queremos mostrar algo.
+        }
+
+        function hacerSuma(){
+            let formulario = document.forms['sumatoria']
+            // Con lo anterior estamos viendo que para poder hacer uso de un formulario html que tiene o admite datos debemos de serleccionar el formulario haciendo uso de .forms y indicarle el id del formulario
+            let resultado = 0;
+            for(let dato of formulario){
+                // aqui estamos accediendo a los datos que el formulario nos entrega. para elllo tenemos que recordar que nosotrs le colocamos un nombre a cada input con el tambien podriamos acceder a los elementos pero eso no lo hicimos aqui
+                resultado += parseInt(dato.value,0);
+                // usamos .value para acceder al valor del input, este valor se nos traera en string, por lo cual deberemos de convertirno a un numero de tipo entero o como sea que nosotros lo necesitemos.
+            }
+            document.getElementById('resultadoSuma').innerHTML =  resultado;
+        }
+    </script>
+</body>
+</html>

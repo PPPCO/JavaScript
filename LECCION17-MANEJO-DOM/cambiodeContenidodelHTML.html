@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio del contenido del DOM con HTML</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body>
+    <h1 id="titulo">Cambio del contenido del DOM con HTML</h1>
+    <button onclick="mostrar()">Mostrar nuevo Titulo</button>
+    <script>
+        function mostrar(){
+        // document.getElementById('titulo').innerHTML = 'Nuevo titulo';
+        document.getElementById('titulo').innerHTML += '<br> Nuevo titulo';
+        // Bueno tambien tenemos que recordar que podemos hacer que en vez de que se sustituya el nuevo titulo por otro nuevo, simplemente concatenarle el nuevo, ademas que las etiquetas html que le pasemos funcionaran a la hora de ejecutar el contenido o bueno se vizualice, tal como paso aqui, lo que hicimos fue conservar el contenido anterior y concatenarle el nuevo haciendo uso del operador += , ademas le estamos pasando un string y dentro de este una etiqueta de salto de linea la cual funcionara adecuadamente como si nada.
+    }
+
+    </script>
+</body>
+</html>

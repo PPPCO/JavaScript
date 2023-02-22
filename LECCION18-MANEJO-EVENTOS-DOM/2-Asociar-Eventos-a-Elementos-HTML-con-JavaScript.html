@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociar Eventos a Elementos HTML con JavaScript</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body>
+    <h1 id="titulo">Asociar Eventos a Elementos HTML con JavaScript</h1>
+    <br>
+    <div id="mostrar"></div>
+    <script>
+        // LO QUE ESTA CLASE ESTAMOS HACIENDO...
+        // Hasta el momento unicamente habiamos visto que colocabamos el manejo del evento en la etiqueta html, por ejemplo hasta esta clase unicamente hemos visto onclick, pero tambien podemos seleccionar la etiqueta html en Java script y colocarle el evento desde javaScript considero que esta es una manera interesante de trabajar los eventos con js, pero en lo personal y por la forma en que eh tabajando considero que para mi es mas comodo calocar directamente el evento en la etiqueta html.
+        document.getElementById('titulo').onclick = cambiarTexto;// estamos unicamente pasando la referencia de una funcion por eso no usamos o colocamos los parentesis, esta es una funcion de tipo callback.
+
+        // En la linea anterior seleccionamos la etiqueta html sobre la que queriamso trabajar, despues colocamos el evento en este caso usoamos onclick, y le referenciamos el nombre de una funcion, OJO, referenciamos la funcion, no la mandamos a llamar, y esa funcion se mandara a llamar posteriormente, por ello es una funcion de tipo callbacl, repasar funciones callback*******
+
+        function cambiarTexto(){
+            document.getElementById('mostrar').innerHTML = 'Nuevo contenido';
+        }
+    </script>
+</body>
+</html>

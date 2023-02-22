@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de eventos con DOM HTML y JavaScript</title>
+</head>
+<body>
+    <h1 onclick="this.innerHTML = 'Nuevo Titulo'">Manejo de eventos con DOM HTML y JavaScript</h1>
+    <!-- Lo que esta sucediendo en la linea anterior es que podemos almacenar codigo html dentro de la etiqueta onclick, pues en vez de pasarle o mandar a llamar una funcion como lo habiamos estado haciendo hasta ahora, esta vez colocamos codigo.
+        Ademas cuando hacemos uso de js con html, al colocar un evento js o como sea, al estar metiendo codigo en onclick se esta creando una especie de objeto h1 al cual podemos modificarle su contenido en la misma linea haciendo uso de this tal y como con un objeto, y ya sabemos que para acceder o modificar su contenido tenemos que usar innerHTML.
+        lO ANTERIOR HECHO NO ES NADA RESCOMENDABLE, LO IDEAL ES METERLO SIEMPRE EN UN METODO.-->
+        
+    <h1 onclick="cambiarTexto(this)">Manejo de eventos pasando como argumento el valor o contenido de la etiqueta</h1>
+    <!-- En la linea anterior estamos pasando como argumento this, lo que indica que le estamos pasando toda la etiqueta html en la que se esta usando como argumento this. recordemos que esto hara que pase la etiqueta como un objeto al cual cuando quiera usar tendra que usar innerHTML o src o lo que sea que ocupe -->
+
+    <script>
+        function cambiarTexto(argument){
+            argument.innerHTML = 'Hola que hace';
+            argument.style.color = "red";
+            // Y bueno esta funcion esta recibiendo como argumento un objeto, esto ya lo habiamos visto cuando vimos objetos con js, entonces tenemos la referencia de un objeto al cual podemos accedr y modificar a sus propiedades como queramos, en este caso accedimos y modificamos sus atributos de color de leta y el texto que contiene el h1 objeto que nos pasaron.
+        }
+    </script>
+</body>
+</html>

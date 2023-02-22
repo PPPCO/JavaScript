@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del Evento onload en JavaScript</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body onload="entrar()">
+    <h1>Manejo del Evento onload en JavaScript</h1>
+    <!-- Este evento se ejecuta cuando se carga nuesta pagina web -->
+    <!-- Esto nos sirve para revisar siertas cuestiones cuando se carga nuesta pagina web, por ejemplo, revisar si el idioma que esta revisando el usuario, o si tiene habilitado el concepto de cookies, recordemos que las cookies son archivos que guardan informacion de sitios cuando estamos navegando en la web, y este formato se guarda en el formato de llave-valor. -->
+    <br>
+    <div id="mostrar"></div>
+
+    <script>
+        function entrar(){
+            alert("Entrando a la pagina web");// con esta linea etamos haciendo que se muestre una alerta cuando se carga nuestra pagina web, lo que hace es que se muestra un pop up.
+
+            // revisaremos si estan habilitadas las cookies.
+
+            let texto = 'Hola que hace';
+            if(navigator.cookieEnabled){// navigator es un objeto que ya esta definido en JavaScript.
+                texto = 'Las cookies esta habilitadas';  
+            }else{
+                texto = 'Cookies esta inhabilitadas';
+            }
+            document.getElementById('mostrar').innerHTML = texto;
+        }
+    </script>
+</html>

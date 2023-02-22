@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del evento onfocus y onblur</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body>
+    <h1>Manejo del evento onfocus y onblur</h1>
+    <br>
+    
+    Nombre: <input type="text" id="nombre">
+    <br>
+    <br>
+    apellido: <input type="text" id="apellido">
+
+    <script>
+        // addEventListener, nos servira para no tener que poner los eventos en el codigo html si no desde js controlar eso, de esta forma tendremso un codigo mas limpio.
+        document.getElementById('nombre').addEventListener('focus',cambiar);// una funcion call back, solo la referenciamos no la mandamos a llamar.
+        document.getElementById('nombre').addEventListener('blur',regresar);
+        // si le pasamos el nombre del evento sin comillas estariamos pasando el nombre de una variable, con las comillas estamos pasndo el nombre del metodo que queremos asiciar, en este caso 'onblur'.
+
+        // con FUNCION FLECHA
+        document.getElementById('apellido').addEventListener('focus',(evento)=> evento.target.style.background = 'green');
+        document.getElementById('apellido').addEventListener('blur',(evento)=> evento.target.style.background = 'white');
+        // recordemos que estas funciones seran anonimas por lo cual no podran ser recicladas por otros elementos a menos que copiemos y peguemos el codigo, las funciones anteriores fueron callbacks
+
+        function cambiar(evento){
+            let componente = evento.target;
+            componente.style.background = 'yellow';
+        }
+        // con esta funcion estamos recibiendo como parametro el evento con el que se dispara la funcion, si bien cuando mandamos a llamar ala funcio unicamamente la referenciamos porque es un call back, podemos de esta forma recibir el evento y con target acceder a todos los elementos del elemento que dispara la funcion, como si directamente en la etiqueta colocaramos funcion(this)
+        function regresar(evento){
+            evento.target.style.background = 'white';
+        }
+    </script>
+</body>
+</html>

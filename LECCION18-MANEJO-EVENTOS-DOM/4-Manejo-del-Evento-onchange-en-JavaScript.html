@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del Evento onchange en Java Script</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body>
+    <h1 id="titulo">Manejo del Evento onchange en Java Script</h1>
+    <!--Este evento normalmente lo vamos a querer capturar o usar, cuando modificamos los valores de un compo de texto o los elementos de un formulario.  -->
+
+    <br>
+    Nombre: <input type="text" id="nombre" placeholder="escribe tu nombre..." onchange="convertir()">
+
+    <!-- lo que nos permite hacer el evento onchange, es que cuando capturemos x cosa en un input o donde lo pongamos disparara la funcion o el codigo js que le coloquemos(recordemos que colocar cosigo js dentro de la etiqueta aunque se puede no es para nada lo ideal), entonces en este caso hicimos que cuando ingresara un nombre, y se saliera del input se disparara(asi funciona onchange) la funcion que le dijimos que iniciara, por lo tanto se disparo la funcion 'convertir' la cual unicamente hizo que el valor ingresado se conviertera a mayusculas.
+    Algo importante que quiero recordar es que cuando nosotros trabajamos con inputs los valores que le ingresemos casi siempre nos lo pasara a js como texto, aunque con rl type se supune que ahi le colocamos si queremos que se tipo texto, numerico o lo que usemos, pero  en fin.
+    ADEMAS
+    Recordemos que pudimos pasarle directamente a la funcion, la misma referencia del objeto o bueno de la etiqueta con this 'mostrar(this)' de esta forma nos ahorrariamos colocarle un id al input, asi como cuando queramos modificar o hacer x cosa con la etiqueta html evitar el uso de document.getElementBy.... y unicamente usar el objeto regerenciado y comenzar a acceder a sus elementos, pero en fin.... solo lo menciono para etener en cuenta. -->
+
+
+    <script>
+        function convertir(){
+            let nombre =  document.getElementById('nombre');// o pumios pasarle como parametro de la funcion this, que traera el input como un objeto y con ello todos sus elementos inclusive su informacion.
+            nombre.value = nombre.value.toUpperCase();// accedemos al valor del input porque pues al ser un input de entrada, recordemos que lo que ingresemos sera el valor que ese input tenga, asi se una cadena de texto que nosotros ingresemos.
+        }
+    </script>
+</body>
+</html>

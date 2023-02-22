@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de valor de atributo HTML con js</title>
+    <style>
+        #bmostrar{
+            width: 150px;
+            height: 25px;
+            border: none;
+            background-color: #444;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            display: block;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Cambio de valor de atributo HTML con js</h1>
+    <br>
+    <button id="bmostrar" onclick="mostrar()">Mostar</button>
+    <br>
+    <img src="nubesita.png" alt="nuvesita" id="imagen">
+
+    <script>
+        function mostrar(){
+            document.getElementById('imagen').src = 'http://globalmentoring.com.mx/imagenes/html5.png'
+            document.getElementById('bmostrar').style.backgroundColor = 'green';
+        }
+    </script>
+</body>
+</html>

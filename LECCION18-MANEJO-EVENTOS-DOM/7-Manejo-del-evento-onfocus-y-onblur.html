@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del evento onfocus y onblur</title>
+    <link rel="icon" type="icon/x-icon" href="nubesita.png">
+</head>
+<body>
+    <h1>Manejo del evento onfocus y onblur</h1>
+    <br>
+    <!-- Evento ONFOCUS: Cuando damos click sobre una caja de texto, vamos a capturar este envento para cambiar el background del elemento de tipo input text, y cuando quitemos el foco de este elmento va a regresar el background a blanco y para ello se usara el EVENTO ONBLUR.
+    esto funciona como 'active' de css  -->
+    Nombre: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+    <br>
+    <br>
+    apellido: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+
+    <script>
+        function cambiar(elemento){
+            elemento.style.background = 'yellow';
+        }
+        function regresar(elemento){
+            elemento.style.background = 'white';
+        }
+    </script>
+</body>
+</html>
